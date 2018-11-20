@@ -1,0 +1,144 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<img src="{{logo}}" alt="wookull" class="logo">
+		</div>
+	</div>
+	<div class="container">
+	<mat-tab-group mat-align-tabs="center">
+  		<mat-tab label="Agregar Tarea">
+  			<div class="col-md-12 content-form">
+				<form class="form-add">
+					<div class="form-group">
+						<label for="name" class="control-label col-sm-2">
+							Nombre
+						</label>
+						<div class="col-md-12-12">
+							<input #nameInput type="text" class="form-control input-create col-md-4" id="name" name="name" value="1" [(ngModel)]="model.name" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="position" class="control-label col-sm-2">
+							Posicion
+						</label>
+						<div class="col-md-12">
+							<input #positionInput type="text" class="form-control input-create col-md-4" id="position" name="position" [(ngModel)]="model.position" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="homework" class="control-label col-sm-2">
+							Tarea
+						</label>
+						<div class="col-md-12">
+							<textarea #homeworkInput type="text" maxlength="50" class="form-control input-create col-md-4" id="homework" name="homework" [(ngModel)]="model.homework" required>
+							</textarea>
+							<mat-hint align="center">{{homeworkInput.value.length}} / 50</mat-hint>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-12">
+							<button type="submit" class="btn btn-add" (click)="addEmployee()">
+								<mat-icon>add_circle_outline</mat-icon> Agregar
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+  		</mat-tab>
+  		<mat-tab label="Mis Tareas">
+  			<div class="container">
+				<div class="row" [hidden]="showHomeworks">
+					<div class="col-lg-6">
+						<img class="no-homeworks" src="../assets/img/no-homeworks.svg" alt="">
+					</div>
+					<div class="col-lg-6">
+						<div class="text-no-homeworks">
+						<h1>Ohh Nooo..</h1>
+						<h2>Aun no hay tareas agregadas</h2>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-4 content-card"  *ngFor="let employee of employees; let i = index">
+	    			<div class="card-stories">
+	        		<div class="row">
+	        			<div class="col-xs-2 col-md-12">
+	        				<h3 class="name-employee">{{employee.name}}</h3>
+	        				<small class="position-employee">{{employee.position}}</small>
+	        				<p class="homework-employee">{{employee.homework}}</p>
+	        			</div>
+	        		</div>
+	        		<hr width="50%">
+	        		<div class="row">
+	        			<div class="col-xs-12 col-md-12">
+	        				<a data-toggle="modal" data-target="#myModal" (click)="editEmployee(i)" class="btn-edit"><mat-icon>edit</mat-icon></a>
+	        				<a class="btn-deleted" [swal]="deleted"><mat-icon>delete</mat-icon></a>
+	        				<swal
+								#deleted
+								type="question"
+								title="¿Queires borrar esta tarea?"
+								showCancelButton="true"
+	  							focusConfirm="false"
+	  							confirmButtonColor="#108ee8"
+	  							confirmButtonText="Si"
+	  							cancelButtonText="No"
+	  							(confirm)="deleteEmployee(i)"
+							></swal>
+	        			</div>
+	        		</div>
+	    			</div>
+				</div>
+			</div>
+  		</mat-tab>
+	</mat-tab-group>
+	</div>
+</div>
+
+<div class="modal fade" id="myModal">
+	<div class="modal-dialog modal-md">
+    	<div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Editar</h4>
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        </div>
+	        <div class="modal-body">
+	          <form class="form-edit">
+					<div class="form-group">
+						<label for="name" class="control-label col-sm-2">
+							Nombre
+						</label>
+						<div class="col-sm-10 input-center">
+							<input type="text" class="form-control input-create" id="name" name="name" [(ngModel)]="model2.name">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="position" class="control-label col-sm-2">
+							Posicion
+						</label>
+						<div class="col-sm-10 input-center">
+							<input type="text" class="form-control input-create" id="position" name="position" [(ngModel)]="model2.position">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="homework" class="control-label col-sm-2">
+							Tarea
+						</label>
+						<div class="col-sm-10 input-center">
+							<textarea type="text" class="form-control input-create" id="homework" name="homework" [(ngModel)]="model2.homework">
+							</textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10 col-sm-offset-2 input-center">
+							<button data-dismiss="modal" type="submit" class="btn btn-save" (click)="updateEmployee()">
+								Guardar
+							</button>
+						</div>
+					</div>
+				</form>
+	        </div>
+      	</div>
+    </div>
+</div>
+<footer>
+	<a href="https://www.instagram.com/jared_ortz/" title="instagram!"><p class="author">By: Jared Ortega Ramírez</p></a>
+</footer>

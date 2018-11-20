@@ -1,0 +1,132 @@
+::ng-deep .mat-tab-body-content {
+  overflow: visible !important;
+}
+.input-center{
+	margin: auto;
+	display: block;
+}
+.logo{
+	width: 250px;
+	margin: auto;
+	display: block;
+}
+h1, h2{
+	font-family: 'Poppins';
+	font-weight: 600;
+}
+h4{
+	font-family: 'Poppins';
+	font-weight: 500;
+}
+.form-add{
+	margin-top: 3em;
+	text-align: center;
+}
+.form-edit{
+	text-align: center;
+}
+label, input, textarea{
+	font-family: 'Poppins';
+}
+.content-form{
+	padding: 20px 0;
+}
+.form-control{
+	padding: 22px 20px;
+}
+.no-homeworks{
+	width: 80%;
+	margin: auto;
+	display: block;
+}
+.text-no-homeworks{
+	margin-top: 5em;
+	float: left;
+}
+.text-no-homeworks h1{
+	color: #108ee8;
+}
+.text-no-homeworks h2{
+	color: #77909c;
+}
+.input-create{
+	margin: auto;
+	border: none;
+	background-color: #ededed;
+	border-radius: 20px;
+}
+.homework{
+	background: #f2f2f2;
+	padding: 20px;
+	border-radius: 10px;
+}
+.position{
+	font-family: 'Poppins';
+	font-size: 13px;
+}
+.content-homework{
+	position: relative;
+	padding: 10px;
+	max-width: 50%;
+}
+.content-card{
+	margin-top: 3em;
+}
+.card-stories{		
+	text-align: center;
+  	background: #f2f2f2;
+  	padding: 20px 18px;
+  	border-radius: 16px;
+  	margin-bottom: 2.5em;
+  	transition: all 0.4s ease-out;
+  	word-wrap: break-word;
+}
+.name-employee, .position-employee, .homework-employee{
+	font-family: 'Poppins';
+}
+.name-employee{
+	margin-bottom: .2rem;
+}
+.position-employee{
+	color: grey;
+}
+.homework-employee{
+	padding-top: 10px;
+	color: #9C9C9C;
+}
+.btn-add{
+	margin: auto;
+	display: block;
+	cursor: pointer;
+	font-family: 'Poppins';
+	background-color: #108ee8;
+	color: #fff !important;
+	padding: 6.5px 17px;
+	font-size: 14px;
+	border-radius: 25px;
+}
+.btn-edit{
+	cursor: pointer;
+	font-family: 'Poppins';
+	background-color: #108ee8;
+	color: #fff !important;
+	padding: 5px 8px;
+	border-radius: 25px;
+	margin-right: 5px;
+}
+.btn-deleted{
+	cursor: pointer;
+	font-family: 'Poppins';
+	background-color: #FC3A52;
+	color: #fff !important;
+	padding: 5px 8px;
+	border-radius: 25px;	
+}
+.btn-save{
+	cursor: pointer;
+	font-family: 'Poppins';
+	background-color: #42BA78;
+	color: #fff !important;
+	padding: 6px 14px;
+	border-radius: 25px;
+}
